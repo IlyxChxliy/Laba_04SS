@@ -5,7 +5,8 @@
 
 using namespace std;
 
-void readFromFile(vector<string>& lines, const string& filename = "input.txt") {
+void readFromFile (vector<string>& lines, const string& filename = "input.txt")
+{
     ifstream inputFile(filename);
 
     if (!inputFile.is_open()) {
@@ -28,11 +29,10 @@ void printToScreen(const vector<string> &lines) {
         return;
     }
 
-    cout << "\n=== Вывод строк на экран ===" << endl;
+    cout << "Вывод строк на экран" << endl;
     for (size_t i = 0; i < lines.size(); i++) {
         cout << "[" << i + 1 << "] " << lines[i] << endl;
     }
-    cout << "============================\n" << endl;
 }
 
 // Функция №3: Запись строк в файл
@@ -52,7 +52,8 @@ void writeToFile(const vector<string> &lines, const string &filename = "output.t
     cout << "Записано " << lines.size() << " строк в файл " << filename << endl;
 }
 
-int main() {
+int main()
+{
     vector<string> lines;
     readFromFile(lines);
     printToScreen(lines);
