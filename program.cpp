@@ -4,8 +4,21 @@
 
 using namespace std;
 
-void readFromFile(vector<string>& lines) {
-    // Функция 1: чтение из файла
+void readFromFile(vector<string>& lines, const string& filename = "input.txt") {
+    ifstream inputFile(filename);
+
+    if (!inputFile.is_open()) {
+        cout << "Ошибка: не удалось открыть файл " << filename << endl;
+        return;
+    }
+
+    string line;
+    while (getline(inputFile, line)) {
+        lines.push_back(line);
+    }
+
+    inputFile.close();
+    cout << "Прочитано " << lines.size() << " строк из файла." << endl;
 }
 
 void printToScreen(const vector<string>& lines) {
